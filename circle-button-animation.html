@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Circle Button Animation</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+		<style>
+			html, body {
+				height: 100%;
+			}
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: black;
+			}
+			a.material-symbols-outlined {
+				font-size: 5rem;
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 8rem;
+				aspect-ratio: 1;
+				color: #7a7a7a;
+				background-color: #373737;
+				border-radius: 50%;
+				transition: color 0.5s ease-in-out;
+			}
+			
+			@property --fill {
+				syntax: '<percentage>';
+				inherits: true;
+				initial-value: 0%;
+			}
+			a {
+				text-decoration: none;
+			}
+			a:hover {
+				color: greenyellow;
+				--fill: 100%;
+			}			
+			a::after {
+				position: absolute;
+				z-index: -1;
+				content: '';
+				inset: -10px;
+				border-radius: inherit;
+				
+				background: conic-gradient(greenyellow var(--fill), transparent var(--fill));
+				transition: --fill 0.6s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<a class="material-symbols-outlined" href="http://www.google.com">home</a>
+	</body>
+</html>
